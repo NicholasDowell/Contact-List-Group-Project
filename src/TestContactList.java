@@ -38,3 +38,20 @@ public class TestContactList {
 		
 	}
 }
+
+data loaded
+all contacts printed
+new contact constructed
+testing sammie:
+got test first Name
+got test last name
+got test Address
+got test email
+got test phone#
+got test notes
+contact added
+all contacts printed
+ONE whole contact being printed
+data saved
+This is the last line of code in the program
+
