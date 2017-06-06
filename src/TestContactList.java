@@ -39,10 +39,11 @@ public class TestContactList {
 	}
 }
 
+/*OUTPUT:
 data loaded
 all contacts printed
 new contact constructed
-testing sammie:
+testing sample:
 got test first Name
 got test last name
 got test Address
@@ -54,4 +55,5 @@ all contacts printed
 ONE whole contact being printed
 data saved
 This is the last line of code in the program
+*/
 

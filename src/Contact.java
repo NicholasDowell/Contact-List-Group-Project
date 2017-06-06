@@ -41,13 +41,22 @@ public class Contact {
 	public void setFirstName(String newFirstName) {
 	}
 
+
 	/**
-	 * Parameterized constructor that sets lastName
+	 * Returns the contact's last name
 	 * 
-	 * @author armanmousavi
+	 * @author Zhixiang
 	 */
-	public Contact(String lastName) {
-		this.lastName = lastName;
+	public String getLastName() {
+		return "got test last Name";
+	}
+
+	/**
+	 * assigns the contact's last name
+	 * 
+	 * @author Zhixiang
+	 */
+	public void setLastName(String newFirstName) {
 	}
 
 	/**

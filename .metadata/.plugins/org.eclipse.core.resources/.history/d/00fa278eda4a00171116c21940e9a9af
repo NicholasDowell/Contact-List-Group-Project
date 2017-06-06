@@ -1,0 +1,69 @@
+/**
+ * This class stores a list of integers and provide simple
+ * operations on the list.
+ */
+import java.util.Random;
+
+public class List {
+	private int[] array;
+	private static final int MAXVALUESTORED = 10; //Set the maximum value for all random numbers
+	
+	
+	/**
+	 * Initialize a list with given length and simply set its values as 0
+	 */
+	public void List(int numInts){
+		this.array = new int[numInts];
+		
+	}
+	
+	/**
+	 * Return a group of numbers in the list
+	 */
+	public String toString(){//Does the formating of the toString() matter
+		String result;
+		result = "";
+		for(int i = 0; i < array.length; i++){
+			result += array[i] + " "; 
+		}
+		return result;
+	}
+	
+	/**
+	 * Fill up the list with random integer that is limited by given maximum 
+	 */
+	public void fillWithRandom(){//Use final for the range
+		Random rand = new Random();
+		for(int i = 0; i< array.length; i++){
+			array[i] =  rand.nextInt(MAXVALUESTORED);
+		}
+	}
+	
+	/**
+	 * Sort numbers in the list in ascending order
+	 */
+	public void sort(){
+		int[] sortedArray = new int[array.length];
+		int temp;
+		for(int i = 0; i < array.length - 1; i++){
+			for(int a = i+1; a < array.length; a++){
+				if(array[i] > array[a]){
+					temp = array[i];
+					array[i] = array[a];
+					array[a] = temp;
+				}
+			}
+		}
+	}
+	
+	/**
+	 * return a specified element that is in the list
+	 */
+	public int getElement(int index){
+		if(index >= 0 && index < array.length){
+			return array[index];
+		}else{
+			return -1;
+		}
+	}
+}

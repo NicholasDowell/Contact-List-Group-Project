@@ -1,0 +1,29 @@
+/**
+ * Tests class List by creating two objects of class List,
+ * prints out expect output using methods in two objects.
+ */
+public class TestList {
+	public static void main(String args[]){
+		List firstList = new List();
+		firstList.List(10);
+		System.out.println("Empty Zero List: " + firstList);
+		firstList.fillWithRandom();
+		System.out.println("Random List: " + firstList);
+		List secondList = new List();
+		secondList.List(15);
+		secondList.fillWithRandom();
+		System.out.println("Another Random List: " + secondList);
+		secondList.sort();
+		System.out.println("Sorted List: " + secondList);
+		System.out.println("Element for each position:");
+		for(int i = 0; i < 15; i ++){
+			System.out.println(i + ":"+secondList.getElement(i));
+		}
+	}
+}
+
+/*OUTPUT:
+0 0 0 0 0 0 0 0 0 0 
+8 8 5 3 3 5 9 3 1 1 
+7 6 2 5 8 3 4 8 5 3 3 7 8 6 3 
+*/
