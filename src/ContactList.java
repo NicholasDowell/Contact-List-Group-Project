@@ -9,7 +9,7 @@ public class ContactList {
 	private ArrayList<Contact> currentContacts = new ArrayList<Contact>();
 	
 	/**
-	 * adds a contact to the list at the next unoccupied index
+	 * Adds a contact to the list at the next unoccupied index
 	 * @author Nick
 	 */
 	public void addContact(Contact theContact){
@@ -23,7 +23,7 @@ public class ContactList {
 		System.out.println("all contacts printed");
 	}
 	/**
-	 * prints all the info for each contact with a specified last name
+	 * Prints all the info for each contact with a specified last name
 	 * @author Nick
 	 */
 	public void printContact(String lastName){
