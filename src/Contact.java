@@ -16,12 +16,12 @@ public class Contact {
 	private String notes;
 
 	/**
-	 * Asks user for information to fill in a new contact
+	 * Set the last name for contact
 	 * 
-	 * @author Nick
+	 * @author Zhixiang
 	 */
-	public Contact() {
-		System.out.println("new contact constructed");
+	public Contact(String lastName) {
+		this.lastName = lastName;
 	}
 
 	/**

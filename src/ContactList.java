@@ -34,6 +34,7 @@ public class ContactList {
 	 * @author Nick
 	 */
 	public void save(){
+		//Implement save function
 		System.out.println("data saved");
 	}
 	/**
@@ -44,8 +45,12 @@ public class ContactList {
 		System.out.println("data loaded");
 	}
 	
-	
-	
-	
+	/**
+	 * Return infomation of the entire list of contact
+	 * @author Zhixiang
+	 */
+	public String toString(){
+		return "";
+	}
 	
 }
