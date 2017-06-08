@@ -29,6 +29,7 @@ public class ContactList {
 	public void printContact(String lastName){
 		System.out.println("ONE whole contact being printed");
 	}
+	
 	/**
 	 * Saves the current list of contacts onto the disk and exits the program
 	 * @author Nick
@@ -46,7 +47,7 @@ public class ContactList {
 	}
 	
 	/**
-	 * Return infomation of the entire list of contact
+	 * Return information of the entire list of contact
 	 * @author Zhixiang
 	 */
 	public String toString(){
