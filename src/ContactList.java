@@ -31,8 +31,8 @@ public class ContactList {
 	}
 	
 	/**
-	 * Saves the current list of contacts onto the disk and exits the program
-	 * @author Nick
+	 * Saves the current list of contacts onto the disk
+	 * @author Nick, Zhixiang
 	 */
 	public void save(){
 		//Implement save function

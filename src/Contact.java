@@ -128,10 +128,9 @@ public class Contact {
 	}
 	
 	/**
-	 * return all information of the contact
+	 * return formatted entire contact information
 	 * @author Zhixiang
 	 */
 	public String toString(){
-		return this.lastName + " " + this.lastName + "\n" + this.streetAddress + "\n" + this.emailAddress  + "\n" + this.phoneNumber  + "\n" + this.notes;
 	}
 }
