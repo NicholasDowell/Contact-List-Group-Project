@@ -34,7 +34,7 @@ public class Contact {
 	}
 
 	/**
-	 * assigns the contact's first name
+	 * Assigns the contact's first name
 	 * 
 	 * @author Nick
 	 */
@@ -52,7 +52,7 @@ public class Contact {
 	}
 
 	/**
-	 * assigns the contact's last name
+	 * Assigns the contact's last name
 	 * 
 	 * @author Zhixiang
 	 */
@@ -60,7 +60,7 @@ public class Contact {
 	}
 
 	/**
-	 * returns the contact's street address
+	 * Returns the contact's street address
 	 * 
 	 * @author Nick
 	 */
@@ -69,7 +69,7 @@ public class Contact {
 	}
 
 	/**
-	 * assigns the contact's street address
+	 * Assigns the contact's street address
 	 * 
 	 * @author Nick
 	 */
@@ -86,7 +86,7 @@ public class Contact {
 	}
 
 	/**
-	 * assigns the contact's email address
+	 * Assigns the contact's email address
 	 * 
 	 * @author Nick
 	 */
@@ -94,7 +94,7 @@ public class Contact {
 	}
 
 	/**
-	 * returns the contact's phone number
+	 * Returns the contact's phone number
 	 * 
 	 * @author Nick
 	 */
@@ -103,7 +103,7 @@ public class Contact {
 	}
 
 	/**
-	 * assigns the contact's phone number
+	 * Assigns the contact's phone number
 	 * 
 	 * @author Nick
 	 */
@@ -111,7 +111,7 @@ public class Contact {
 	}
 
 	/**
-	 * returns the contact's notes
+	 * Returns the contact's notes
 	 * 
 	 * @author Nick
 	 */
@@ -120,7 +120,7 @@ public class Contact {
 	}
 
 	/**
-	 * assigns the contact's notes
+	 * Assigns the contact's notes
 	 * 
 	 * @author Nick
 	 */
@@ -128,7 +128,7 @@ public class Contact {
 	}
 	
 	/**
-	 * return formatted entire contact information
+	 * Return formatted entire contact information
 	 * @author Zhixiang
 	 */
 	public String toString(){
