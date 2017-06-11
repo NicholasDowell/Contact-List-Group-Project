@@ -77,7 +77,7 @@ public class Contact {
 	}
 
 	/**
-	 * returns the contact's email address
+	 * Returns the contact's email address
 	 * 
 	 * @author Nick
 	 */
