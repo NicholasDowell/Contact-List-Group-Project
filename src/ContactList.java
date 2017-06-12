@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 /**
- * One ContactList holds one contact[]
- * it can manipulate, save, and display the array
+ * One ContactList holds one list of Contact objects
+ * it can manipulate, save, and display elements of the array.
  * @author Nick
  */
 public class ContactList {
