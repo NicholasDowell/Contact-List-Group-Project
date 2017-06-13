@@ -133,4 +133,13 @@ public class Contact {
 	 */
 	public String toString(){
 	}
+	
+	/**
+	 * Allow making comparison between contacts for sorting
+	 * @author Zhixiang
+	 */
+	public int CompareTo(Contact other){
+		//Furthur implementation needed
+		return 0;
+	}
 }
