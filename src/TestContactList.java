@@ -21,7 +21,7 @@ public class TestContactList {
 		sammie.setNotes("A true legend");
 
 		//ND
-		System.out.println("testing sammie:");
+		System.out.println("testing sample:");
 		System.out.println(sammie.getFirstName());
 		System.out.println(sammie.getLastName());
 		System.out.println(sammie.getStreetAddress());
