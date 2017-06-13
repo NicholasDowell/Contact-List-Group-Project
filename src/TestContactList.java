@@ -31,6 +31,7 @@ public class TestContactList {
 		 
 		//ND
 		myList.addContact(sammie);
+		System.out.println(sammie.toString);
 		myList.printAll();
 		myList.printContact("Angler");
 		myList.save();
