@@ -17,6 +17,7 @@ public class ContactList {
 	 * @author Nick
 	 */
 	public void addContact() {
+		
 		currentContacts.add(newContact());
 	}
 

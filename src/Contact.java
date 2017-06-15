@@ -18,7 +18,7 @@ public class Contact {
 	/**
 	 * Set the last name for contact
 	 * 
-	 * @author Zhixiang
+	 * @author Arman
 	 */
 	public Contact(String lastName) {
 		this.lastName = lastName;
@@ -39,24 +39,6 @@ public class Contact {
 	 * @author Nick
 	 */
 	public void setFirstName(String newFirstName) {
-	}
-
-
-	/**
-	 * Returns the contact's last name
-	 * 
-	 * @author Zhixiang
-	 */
-	public String getLastName() {
-		return "got test last Name";
-	}
-
-	/**
-	 * Assigns the contact's last name
-	 * 
-	 * @author Zhixiang
-	 */
-	public void setLastName(String newFirstName) {
 	}
 
 	/**
@@ -132,6 +114,7 @@ public class Contact {
 	 * @author Zhixiang
 	 */
 	public String toString(){
+		return "";
 	}
 	
 	/**
@@ -139,7 +122,7 @@ public class Contact {
 	 * @author Zhixiang
 	 */
 	public int CompareTo(Contact other){
-		//Furthur implementation needed
+		//Further implementation needed
 		return 0;
 	}
 }
