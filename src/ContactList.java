@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.*;
 import java.util.Scanner;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Scanner;
  */
 public class ContactList {
 
-	private ArrayList<Contact> currentContacts;
+	private ArrayList<Contact> currentContacts = new ArrayList<Contact>();
 
 	/**
 	 * Adds a contact to the list at the next unoccupied index
@@ -17,7 +18,6 @@ public class ContactList {
 	 * @author Nick
 	 */
 	public void addContact() {
-		
 		currentContacts.add(newContact());
 	}
 
@@ -27,31 +27,33 @@ public class ContactList {
 	private Contact newContact() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Please enter the person's first name.");
-		String newFirstName = scan.next();
+		String newFirstName = scan.nextLine();
 
 		System.out.println("Please enter the person's last name.");
-		String newLastName = scan.next();
+		String newLastName = scan.nextLine();
 
-		if (newLastName.trim() != null && newLastName.trim() != "") {
-			Contact newContact = new Contact(newLastName);
-			newContact.setFirstName(newFirstName);
+		if (!newLastName.trim().equals(null) && !newLastName.trim().equals("")) {
+			Contact theContact = new Contact(newLastName);
+			theContact.setFirstName(newFirstName);
+			
 			System.out.println("Please enter the person's address.");
-			newContact.setStreetAddress(scan.next());
+			theContact.setStreetAddress(scan.nextLine());
 
 			System.out.println("Please enter the person's email address.");
-			newContact.setEmailAddress(scan.next());
+			theContact.setEmailAddress(scan.nextLine());
 
 			System.out.println("Please enter the person's phone number.");
-			newContact.setPhoneNumber(scan.next());
+			theContact.setPhoneNumber(scan.nextLine());
 
 			System.out.println("Please enter any other additional information about the person.");
-			newContact.setNotes(scan.next());
-			System.out.println(newContact.getFirstName() + newContact.getLastName() + "got stored into the contact list");
-			return newContact;
+			theContact.setNotes(scan.nextLine());
+			
+			System.out.println(newFirstName + " " + newLastName + " got stored into the contact list");
+			return theContact;
 		}
 		else {
 			System.out.println("You did not enter the person's last name." +
-								"/n" + "The person did not get stored into the contact list.");
+								"\n" + "The person did not get stored into the contact list.");
 			return null;
 		}
 
@@ -61,10 +63,10 @@ public class ContactList {
 	 * Prints all contacts stored in the list, alphabetically by last name, then
 	 * first name. (not case sensitive)
 	 * 
-	 * @author Nick
+	 * @author Arman
 	 */
 	public void printAll() {
-		System.out.println("all contacts printed");
+		System.out.println(currentContacts);
 	}
 
 	/**
@@ -95,14 +97,4 @@ public class ContactList {
 	public void loadSavedData() {
 		System.out.println("data loaded");
 	}
-
-	/**
-	 * Return information of the entire list of contact
-	 * 
-	 * @author Zhixiang
-	 */
-	public String toString() {
-		return "";
-	}
-
 }

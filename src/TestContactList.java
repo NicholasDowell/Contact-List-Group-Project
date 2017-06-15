@@ -1,5 +1,5 @@
 /**
- * Tests the ContactsList and Contact objects
+ * Tests the ContactList and Contact objects
  *@author Nick
  */
 public class TestContactList {
@@ -12,9 +12,8 @@ public class TestContactList {
 		myList.printAll();
 		
 		//ND
-		Contact sammie = new Contact();
+		Contact sammie = new Contact("Angler");
 		sammie.setFirstName("sammie");
-		sammie.setLastName("Angler");
 		sammie.setStreetAddress("123 Fish Street, Sandy Eggo, CA");
 		sammie.setEmailAddress("TacoShaman@gmail.com");
 		sammie.setPhoneNumber("100-333-2255");
@@ -23,15 +22,14 @@ public class TestContactList {
 		//ND
 		System.out.println("testing sample:");
 		System.out.println(sammie.getFirstName());
-		System.out.println(sammie.getLastName());
 		System.out.println(sammie.getStreetAddress());
 		System.out.println(sammie.getEmailAddress());
 		System.out.println(sammie.getPhoneNumber());
 		System.out.println(sammie.getNotes());
 		 
 		//ND
-		myList.addContact(sammie);
-		System.out.println(sammie.toString);
+		//myList.addContact(sammie);
+		//System.out.println(sammie.toString);
 		myList.printAll();
 		myList.printContact("Angler");
 		myList.save();

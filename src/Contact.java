@@ -39,6 +39,7 @@ public class Contact {
 	 * @author Nick
 	 */
 	public void setFirstName(String newFirstName) {
+		firstName = newFirstName;
 	}
 
 	/**
@@ -111,10 +112,10 @@ public class Contact {
 	
 	/**
 	 * Return formatted entire contact information
-	 * @author Zhixiang
+	 * @author Arman
 	 */
 	public String toString(){
-		return "";
+		return firstName + " " +  lastName;
 	}
 	
 	/**
