@@ -9,7 +9,7 @@ import java.util.Scanner;
  */
 public class ContactList {
 
-	private ArrayList<Contact> currentContacts = new ArrayList<Contact>();
+	private ArrayList<Contact> currentContacts;
 
 	/**
 	 * Adds a contact to the list at the next unoccupied index
