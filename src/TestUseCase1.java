@@ -1,6 +1,5 @@
 /**
- * Tests UseCase1 by creating two ContactList objects.
- * Each object represents a contact.
+ * Tests ContactList and Contact for use case 1 by creating one ContactList and adding two contacts to it.
  * @author armanmousavi
  *
  */
@@ -9,13 +8,15 @@ public class TestUseCase1 {
 	
 	public static void main(String args[]) {
 		//AM
-		ContactList Arman = new ContactList();
-		Arman.addContact();
-		Arman.printAll();
+		ContactList myList = new ContactList();
+		myList.addContact();
+		myList.printAll();
 		//AM
-		ContactList Danial = new ContactList();
-		Danial.addContact();
-		Danial.printAll();
+		
+		myList.addContact();
+		myList.printAll();
+		
+		
 	}
 
 }
