@@ -1,7 +1,5 @@
 import java.util.ArrayList;
-import java.util.*;
 import java.util.Scanner;
-
 /**
  * One ContactList holds one list of Contact objects it can manipulate, save,
  * and display elements of the array.
@@ -49,13 +47,16 @@ public class ContactList {
 			theContact.setNotes(scan.nextLine());
 			
 			System.out.println(newFirstName + " " + newLastName + " got stored into the contact list");
+			scan.close();
 			return theContact;
 		}
 		else {
 			System.out.println("You did not enter the person's last name." +
 								"\n" + "The person did not get stored into the contact list.");
+			scan.close();
 			return null;
 		}
+		
 
 	}
 
