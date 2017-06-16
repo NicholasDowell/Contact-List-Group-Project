@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /**
  * One Contact will store various information about one person
  * 
@@ -57,6 +55,7 @@ public class Contact {
 	 * @author Nick
 	 */
 	public void setStreetAddress(String newStreetAddress) {
+		streetAddress = newStreetAddress;
 	}
 
 	/**
@@ -74,6 +73,7 @@ public class Contact {
 	 * @author Nick
 	 */
 	public void setEmailAddress(String newEmailAddress) {
+		this.emailAddress = newEmailAddress;
 	}
 
 	/**
@@ -91,6 +91,7 @@ public class Contact {
 	 * @author Nick
 	 */
 	public void setPhoneNumber(String newPhoneNumber) {
+		this.phoneNumber = newPhoneNumber;
 	}
 
 	/**
@@ -108,6 +109,7 @@ public class Contact {
 	 * @author Nick
 	 */
 	public void setNotes(String newNotes) {
+		this.notes = newNotes;
 	}
 	
 	/**
@@ -115,7 +117,7 @@ public class Contact {
 	 * @author Arman
 	 */
 	public String toString(){
-		return firstName + " " +  lastName + " " + streetAddress + " " + emailAddress + " " + phoneNumber + " " + notes;
+		return firstName + " " +  lastName + " " + streetAddress + " " + emailAddress + " " + phoneNumber + " " + notes ;
 	}
 	
 	/**
