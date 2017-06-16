@@ -32,7 +32,7 @@ Please enter the person's phone number.
 Please enter any other additional information about the person.
 Male
 Arman Mousavi got stored into the contact list
-[Arman Mousavi]
+[Arman Mousavi  mousavi.arman@gmail.com  Male]
 Please enter the person's first name.
 Danial
 Please enter the person's last name.
@@ -46,6 +46,6 @@ Please enter the person's phone number.
 Please enter any other additional information about the person.
 Arman's Brother
 Danial Mousavi got stored into the contact list
-[Arman Mousavi, Danial Mousavi]
+[Arman Mousavi  mousavi.arman@gmail.com  Male, Danial Mousavi   041521847 Arman's Brother]
 
 */
