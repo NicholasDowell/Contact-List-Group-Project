@@ -115,7 +115,7 @@ public class Contact {
 	 * @author Arman
 	 */
 	public String toString(){
-		return firstName + " " +  lastName;
+		return firstName + " " +  lastName + " " + streetAddress + " " + emailAddress + " " + phoneNumber + " " + notes;
 	}
 	
 	/**
