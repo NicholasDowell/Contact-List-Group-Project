@@ -62,10 +62,26 @@ public class ContactList {
 	 * Prints all contacts stored in the list, alphabetically by last name, then
 	 * first name. (not case sensitive)
 	 * 
-	 * @author Arman
+	 * @author Nick
 	 */
 	public void printAll() {
-		System.out.println(currentContacts);
+		
+		ArrayList<Contact> printList = currentContacts;
+		boolean notSorted = true;
+		while (notSorted){
+			notSorted = false;
+			for (int i = 0; i < printList.size()-1; i ++){
+				if (printList.get(i).compareTo(printList.get(i+1)) == 1) {
+					Contact tempContact = printList.get(i);
+					printList.set(i, printList.get(i+1));
+					printList.set(i+1, tempContact);
+					notSorted = true;
+				}
+			}
+		}
+		for (int i = 0; i < printList.size(); i ++){
+			System.out.println(printList.get(i));
+		}
 	}
 
 	/**

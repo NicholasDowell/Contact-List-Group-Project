@@ -122,10 +122,23 @@ public class Contact {
 	
 	/**
 	 * Allow making comparison between contacts for sorting
-	 * @author Zhixiang
+	 * Compares this contact to the contact you specify.  Compares by last name then first name alphabetically.
+	 * Returns -1 if this contact comes before the other, returns 0 if they are exactly the same name, returns 1 if this comes after the other one.
+	 * @author Nick
 	 */
-	public int CompareTo(Contact other){
-		//Further implementation needed
-		return 0;
+	public int compareTo(Contact otherContact){
+		if (this.lastName.compareTo(otherContact.lastName) <= -1) {
+			return -1;
+		}
+		else if (this.lastName.compareTo(otherContact.lastName) >= 1){
+			return 1;
+		}
+		else if (this.firstName.compareTo(otherContact.firstName) <= -1){
+			return -1;
+		}
+		else if (this.firstName.compareTo(otherContact.firstName) >= 1){
+			return 1;
+		}
+		else return 0;
 	}
 }
