@@ -28,7 +28,7 @@ public class Contact {
 	 * @author Nick
 	 */
 	public String getFirstName() {
-		return "got test first Name";
+		return firstName;
 	}
 
 	/**
@@ -46,7 +46,7 @@ public class Contact {
 	 * @author Nick
 	 */
 	public String getStreetAddress() {
-		return "got test Address";
+		return streetAddress;
 	}
 
 	/**
@@ -64,7 +64,7 @@ public class Contact {
 	 * @author Nick
 	 */
 	public String getEmailAddress() {
-		return "got test email";
+		return emailAddress;
 	}
 
 	/**
@@ -82,7 +82,7 @@ public class Contact {
 	 * @author Nick
 	 */
 	public String getPhoneNumber() {
-		return "got test phone#";
+		return phoneNumber;
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class Contact {
 	 * @author Nick
 	 */
 	public String getNotes() {
-		return "got test notes";
+		return notes;
 	}
 
 	/**
