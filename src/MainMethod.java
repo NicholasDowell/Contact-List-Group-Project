@@ -41,12 +41,12 @@ public class MainMethod {
 	 * Prints out the menu so the user can see the available options
 	 */
 	public static void printMenu(){
-		System.out.println("**************************************************************");
-		System.out.println("MENU");
-		System.out.println("1 - Enter a new person to the contact list (Last name required)");
-		System.out.println("2 - Print the contact list");
-		System.out.println("3 - Retrieve a person's information by last name");
-		System.out.println("4 - Quit the program");
+		System.out.println("**************************************************************" + "\n");
+		System.out.println("MENU" + "\n");
+		System.out.println("1 - Enter a new person to the contact list (Last name required)" + "\n");
+		System.out.println("2 - Print the contact list" + "\n");
+		System.out.println("3 - Retrieve a person's information by last name" + "\n");
+		System.out.println("4 - Quit the program" + "\n");
 		System.out.println("*Please choose a number, then press ‘Enter’" + "\n" +
 							"***************************************************************");
 	}
@@ -56,14 +56,7 @@ public class MainMethod {
 	 */
 	public static int getUserChoice(){
 		Scanner scan = new Scanner(System.in);
-		String input = scan.next();
-		if (input == "1" || input == "2" || input == "3" || input == "4"){
-			return Integer.parseInt(input);
-		}
-		else {
-			System.out.println("Please Enter a number between 1 and 4");
-			return getUserChoice();
-		}
+		return scan.nextInt();
 	}
 	
 	
