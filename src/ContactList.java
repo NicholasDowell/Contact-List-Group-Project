@@ -70,7 +70,7 @@ public class ContactList {
 		Collections.sort(printList);
 		for (int i = 0; i < printList.size();i ++){
 			System.out.println(printList.get(i));
-	}
+		}
 	}
 
 	/**
