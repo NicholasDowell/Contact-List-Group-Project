@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
@@ -8,7 +9,6 @@ import java.util.Scanner;
  * @author Nick
  */
 public class ContactList {
-
 	private ArrayList<Contact> currentContacts = new ArrayList<Contact>();
 
 	/**
@@ -18,6 +18,13 @@ public class ContactList {
 	 */
 	public void addContact() {
 		currentContacts.add(newContact());
+	}
+	/**
+	 * returns the size of the contact list
+	 * @author Nick
+	 */
+	public int getSize(){
+		return currentContacts.size();
 	}
 
 	/**
@@ -69,7 +76,7 @@ public class ContactList {
 		ArrayList<Contact> printList = currentContacts;
 		Collections.sort(printList);
 		for (int i = 0; i < printList.size();i ++){
-			System.out.println(printList.get(i));
+			printList.get(i).printInfo();
 		}
 	}
 
@@ -111,5 +118,9 @@ public class ContactList {
 	 * 
 	 * @author Nick
 	 */
+	public void loadSavedData(){
+		System.out.println("data loaded");
+	}
 	
+
 }

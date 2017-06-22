@@ -168,4 +168,5 @@ public class Contact implements Comparable<Contact>{
 		}
 		else return 0;
 	}
+	
 }
