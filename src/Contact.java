@@ -21,6 +21,33 @@ public class Contact implements Comparable<Contact>{
 	public Contact(String lastName) {
 		this.lastName = lastName;
 	}
+	/**
+	 * Return last name of the contact
+	 * @author Zhixiang
+	 */
+	public String getLastName(){
+		return lastName;
+	}
+	/**
+	 * Sets the last name of the contact
+	 * @author Nick
+	 */
+	public void setLastName(String newLastName){
+		this.lastName = newLastName;
+	}
+	/**
+	 * Prints out all data on the contact, formatted for user viewing.
+	 * @author Zhixiang
+	 */
+	public void printInfo(){
+		System.out.println("Name:    "+ getFirstName() + " " + getLastName());
+		System.out.println("Phone:   "+ getPhoneNumber());
+		System.out.println("Address: "+ getStreetAddress());
+		System.out.println("Email:   "+ getEmailAddress());
+		System.out.println("Notes:   "+ getNotes());
+		System.out.println();
+	}
+	
 
 	/**
 	 * Returns the contact's first name

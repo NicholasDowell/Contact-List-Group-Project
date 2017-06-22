@@ -74,13 +74,26 @@ public class ContactList {
 	}
 
 	/**
-	 * Prints all the info for each contact with a specified last name
-	 * 
-	 * @author Nick
+	 * Find contact(s) in contact list by last name
+	 * @author Zhixiang
 	 */
-	public void printContact(String lastName) {
-		System.out.println("ONE whole contact being printed");
+	public void find(){
+		Scanner scan = new Scanner(System.in);
+		String lastName;
+		System.out.println("Please enter a last name for search:");
+		lastName = scan.nextLine();
+		boolean found = false;
+		for(int i=0; i<currentContacts.size(); i++){
+			if(currentContacts.get(i).getLastName().trim().equalsIgnoreCase(lastName)){
+				currentContacts.get(i).printInfo();
+				found = true;
+			}
+		}
+		if(!found){
+			System.out.println("Sorry. Contact with last name: "+ lastName + " not found.");
+		}
 	}
+
 
 	/**
 	 * Saves the current list of contacts onto the disk
@@ -98,7 +111,5 @@ public class ContactList {
 	 * 
 	 * @author Nick
 	 */
-	public void loadSavedData() {
-		System.out.println("data loaded");
-	}
+	
 }
