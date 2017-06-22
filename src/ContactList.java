@@ -65,23 +65,10 @@ public class ContactList {
 	 * @author Nick
 	 */
 	public void printAll() {
-		
 		ArrayList<Contact> printList = currentContacts;
-		boolean notSorted = true;
-		while (notSorted){
-			notSorted = false;
-			for (int i = 0; i < printList.size()-1; i ++){
-				if (printList.get(i).compareTo(printList.get(i+1)) == 1) {
-					Contact tempContact = printList.get(i);
-					printList.set(i, printList.get(i+1));
-					printList.set(i+1, tempContact);
-					notSorted = true;
-				}
-			}
-		}
-		for (int i = 0; i < printList.size(); i ++){
+		Collections.sort(printList);
+		for (int i = 0; i < printList.size();i ++){
 			System.out.println(printList.get(i));
-		}
 	}
 
 	/**
