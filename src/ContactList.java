@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 /**
  * One ContactList holds one list of Contact objects it can manipulate, save,
@@ -69,6 +70,7 @@ public class ContactList {
 		Collections.sort(printList);
 		for (int i = 0; i < printList.size();i ++){
 			System.out.println(printList.get(i));
+	}
 	}
 
 	/**
