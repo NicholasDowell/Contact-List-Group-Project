@@ -4,7 +4,7 @@
  * @author Nick
  *
  */
-public class Contact {
+public class Contact implements Comparable<Contact>{
 
 	private String firstName;
 	private String lastName;
@@ -127,16 +127,16 @@ public class Contact {
 	 * @author Nick
 	 */
 	public int compareTo(Contact otherContact){
-		if (this.lastName.compareTo(otherContact.lastName) <= -1) {
+		if (this.lastName.toLowerCase().compareTo(otherContact.lastName.toLowerCase()) <= -1) {
 			return -1;
 		}
-		else if (this.lastName.compareTo(otherContact.lastName) >= 1){
+		else if (this.lastName.toLowerCase().compareTo(otherContact.lastName.toLowerCase()) >= 1){
 			return 1;
 		}
-		else if (this.firstName.compareTo(otherContact.firstName) <= -1){
+		else if (this.firstName.toLowerCase().compareTo(otherContact.firstName.toLowerCase()) <= -1){
 			return -1;
 		}
-		else if (this.firstName.compareTo(otherContact.firstName) >= 1){
+		else if (this.firstName.toLowerCase().compareTo(otherContact.firstName.toLowerCase()) >= 1){
 			return 1;
 		}
 		else return 0;
