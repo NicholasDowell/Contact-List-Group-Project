@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
+import java.io.*;
 /**
  * One ContactList holds one list of Contact objects it can manipulate, save,
  * and display elements of the array.
@@ -104,21 +105,46 @@ public class ContactList {
 	/**
 	 * Saves the current list of contacts onto the disk
 	 * 
-	 * @author Nick, Zhixiang
+	 * @author Arman
 	 */
-	public void save() {
-		// Implement save function
-		System.out.println("data saved");
+	public void save(ContactList list) {
+		FileOutputStream outFile;
+	      ObjectOutputStream outObject;
+	      try  {
+	         outFile = new FileOutputStream ("data");      
+	         outObject = new ObjectOutputStream(outFile);
+	         outObject.writeObject(list);
+	         outObject.writeObject(list);
+	         outFile.close();
+	         outObject.close();      
+	      } catch (IOException ioe)  {
+	         System.out.println ("Error writing objects to the file: "+ ioe.getMessage());
+	      }
+	      list = null;
 	}
 
 	/**
 	 * Reads any saved data from the disk into memory, and stores it in the
 	 * currentContacts
 	 * 
-	 * @author Nick
+	 * @author Arman
 	 */
-	public void loadSavedData(){
-		System.out.println("data loaded");
+	public void loadSavedData(ContactList list){
+	    FileInputStream inFile;
+	      ObjectInputStream inObject;
+
+	      try  {
+	         inFile = new FileInputStream("data");      
+	         inObject = new ObjectInputStream(inFile);
+	         list = (ContactList)inObject.readObject();
+	         list = (ContactList)inObject.readObject();
+	         inFile.close();
+	         inObject.close();      
+	      } catch(IOException ioe)  {
+	         System.out.println ("Error reading from the file: " + ioe.getMessage());
+	      } catch (ClassNotFoundException cnfe)  {
+	         System.out.println ("Error in casting to Rectangle: " + cnfe);
+	      }                      
 	}
 	
 
