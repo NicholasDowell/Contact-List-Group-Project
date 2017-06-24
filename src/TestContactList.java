@@ -8,7 +8,7 @@ public class TestContactList {
 		
 		//ND
 		ContactList myList = new ContactList();
-		myList.loadSavedData();
+		myList.read();
 		myList.printAll();
 		
 		//ND
@@ -32,7 +32,7 @@ public class TestContactList {
 		//System.out.println(sammie.toString);
 		myList.printAll();
 		//myList.printContact();
-		myList.save();
+		myList.write();
 		System.out.println("This is the last line of code in the program");
 		
 	}

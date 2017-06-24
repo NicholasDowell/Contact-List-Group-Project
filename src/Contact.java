@@ -1,10 +1,12 @@
+import java.io.Serializable;
+
 /**
  * One Contact will store various information about one person
  * 
  * @author Nick
  *
  */
-public class Contact implements Comparable<Contact>{
+public class Contact implements Comparable <Contact>, Serializable {
 
 	private String firstName;
 	private String lastName;
@@ -39,13 +41,13 @@ public class Contact implements Comparable<Contact>{
 	 * Prints out all data on the contact, formatted for user viewing.
 	 * @author Zhixiang
 	 */
-	public void printInfo(){
-		System.out.println("Name:    "+ getFirstName() + " " + getLastName());
-		System.out.println("Phone:   "+ getPhoneNumber());
-		System.out.println("Address: "+ getStreetAddress());
-		System.out.println("Email:   "+ getEmailAddress());
-		System.out.println("Notes:   "+ getNotes());
-		System.out.println();
+	public String printInfo(){
+		return "Name:    "+ getFirstName() + " " + getLastName() + "\n" +
+		"Phone:   " + getPhoneNumber() + "\n" +
+		"Address: " + getStreetAddress() + "\n" +
+		"Email:   " + getEmailAddress() + "\n" +
+		"Notes:   " + getNotes() + "\n";
+
 	}
 	
 

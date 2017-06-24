@@ -10,7 +10,7 @@ public class MainMethod {
 	
 	public static void main(String[] args) {
 		ContactList myList = new ContactList();
-		myList.loadSavedData();
+		myList.read();
 		System.out.println("You have a total of " + myList.getSize() + " contacts");
 		boolean notFinished = true;
 		
@@ -27,7 +27,7 @@ public class MainMethod {
 					myList.find();
 					break;
 			case 4: System.out.println("You chose option 4 to quit:");
-					myList.save();
+					myList.write();
 					notFinished = false;
 					break;
 			}	

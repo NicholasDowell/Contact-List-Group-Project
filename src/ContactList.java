@@ -2,13 +2,14 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 import java.io.*;
+
 /**
  * One ContactList holds one list of Contact objects it can manipulate, save,
  * and display elements of the array.
  * 
  * @author Nick
  */
-public class ContactList implements Serializable {
+public class ContactList {
 	private ArrayList<Contact> currentContacts = new ArrayList<Contact>();
 
 	/**
@@ -19,11 +20,13 @@ public class ContactList implements Serializable {
 	public void addContact() {
 		currentContacts.add(newContact());
 	}
+
 	/**
 	 * returns the size of the contact list
+	 * 
 	 * @author Nick
 	 */
-	public int getSize(){
+	public int getSize() {
 		return currentContacts.size();
 	}
 
@@ -41,7 +44,7 @@ public class ContactList implements Serializable {
 		if (!newLastName.trim().equals(null) && !newLastName.trim().equals("")) {
 			Contact theContact = new Contact(newLastName);
 			theContact.setFirstName(newFirstName);
-			
+
 			System.out.println("Please enter the person's address.");
 			theContact.setStreetAddress(scan.nextLine());
 
@@ -53,16 +56,14 @@ public class ContactList implements Serializable {
 
 			System.out.println("Please enter any other additional information about the person.");
 			theContact.setNotes(scan.nextLine());
-			
+
 			System.out.println(newFirstName + " " + newLastName + " got stored into the contact list");
 			return theContact;
-		}
-		else {
-			System.out.println("You did not enter the person's last name." +
-								"\n" + "The person did not get stored into the contact list.");
+		} else {
+			System.out.println("You did not enter the person's last name." + "\n"
+					+ "The person did not get stored into the contact list.");
 			return null;
 		}
-		
 
 	}
 
@@ -75,51 +76,51 @@ public class ContactList implements Serializable {
 	public void printAll() {
 		ArrayList<Contact> printList = currentContacts;
 		Collections.sort(printList);
-		for (int i = 0; i < printList.size();i ++){
-			printList.get(i).printInfo();
+		for (int i = 0; i < printList.size(); i++) {
+			System.out.println(printList.get(i).printInfo());
 		}
 	}
 
 	/**
 	 * Find contact(s) in contact list by last name
+	 * 
 	 * @author Zhixiang
 	 */
-	public void find(){
+	public void find() {
 		Scanner scan = new Scanner(System.in);
 		String lastName;
 		System.out.println("Please enter a last name for search:");
 		lastName = scan.nextLine();
 		boolean found = false;
-		for(int i=0; i<currentContacts.size(); i++){
-			if(currentContacts.get(i).getLastName().trim().equalsIgnoreCase(lastName)){
+		for (int i = 0; i < currentContacts.size(); i++) {
+			if (currentContacts.get(i).getLastName().trim().equalsIgnoreCase(lastName)) {
 				currentContacts.get(i).printInfo();
 				found = true;
 			}
 		}
-		if(!found){
-			System.out.println("Sorry. Contact with last name: "+ lastName + " not found.");
+		if (!found) {
+			System.out.println("Sorry. Contact with last name: " + lastName + " not found.");
 		}
 	}
-
 
 	/**
 	 * Saves the current list of contacts onto the disk
 	 * 
 	 * @author Arman
 	 */
-	public void save() {
+	public void write() {
 		FileOutputStream outFile;
-	      ObjectOutputStream outObject;
-	      try  {
-	         outFile = new FileOutputStream ("data");      
-	         outObject = new ObjectOutputStream(outFile);
-	         outObject.writeObject(currentContacts);
-	         outObject.writeObject(currentContacts);
-	         outFile.close();
-	         outObject.close();      
-	      } catch (IOException ioe)  {
-	         System.out.println ("Error writing objects to the file: "+ ioe.getMessage());
-	      }
+		ObjectOutputStream outObject;
+		try {
+			outFile = new FileOutputStream("data");
+			outObject = new ObjectOutputStream(outFile);
+			outObject.writeObject(currentContacts);
+			outObject.writeObject(currentContacts);
+			outFile.close();
+			outObject.close();
+		} catch (IOException ioe) {
+			System.out.println("Error writing objects to the file: " + ioe.getMessage());
+		}
 	}
 
 	/**
@@ -128,23 +129,34 @@ public class ContactList implements Serializable {
 	 * 
 	 * @author Arman
 	 */
-	public void loadSavedData(){
-	    FileInputStream inFile;
-	      ObjectInputStream inObject;
+	public void read() {
+		FileInputStream inFile;
+		ObjectInputStream inObject;
+		try {
+			inFile = new FileInputStream("data");
+			inObject = new ObjectInputStream(inFile);
+			currentContacts = (ArrayList<Contact>) inObject.readObject();
+			currentContacts = (ArrayList<Contact>) inObject.readObject();
+			inFile.close();
+			inObject.close();
+		} catch (IOException ioe) {
+			System.out.println("Error reading from the file: " + ioe.getMessage());
+		} catch (ClassNotFoundException cnfe) {
+			System.out.println(cnfe);
+		}
+	}
 
-	      try  {
-	         inFile = new FileInputStream("data");      
-	         inObject = new ObjectInputStream(inFile);
-	         currentContacts = (ArrayList<Contact>)inObject.readObject();
-	         currentContacts = (ArrayList<Contact>)inObject.readObject();
-	         inFile.close();
-	         inObject.close();      
-	      } catch(IOException ioe)  {
-	         System.out.println ("Error reading from the file: " + ioe.getMessage());
-	      } catch (ClassNotFoundException cnfe)  {
-	         System.out.println (cnfe);
-	      }                      
+	public String toString() {
+		String results = "";
+		for (Contact c : currentContacts) {
+			results += c.printInfo() + "\n";
+		}
+		return results;
 	}
 	
-
+	public void setNull() {
+		for (int i = 0; i < currentContacts.size(); i++) {
+			currentContacts.remove(i);
+		}
+	}
 }

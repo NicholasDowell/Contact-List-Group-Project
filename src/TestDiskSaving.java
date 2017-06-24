@@ -1,4 +1,3 @@
-
 public class TestDiskSaving {
 
 	public static void main(String args[]) {
@@ -8,10 +7,16 @@ public class TestDiskSaving {
 		myList.printAll();
 		myList.find();
 		
-		myList.save();
+		myList.write();
+		
+		myList.setNull();
 		System.out.println(myList);
-		myList.loadSavedData();
+		
+		myList.read();
 		System.out.println(myList);
+		
+		
+
 		
 		
 
