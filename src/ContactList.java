@@ -8,7 +8,7 @@ import java.io.*;
  * 
  * @author Nick
  */
-public class ContactList {
+public class ContactList implements Serializable {
 	private ArrayList<Contact> currentContacts = new ArrayList<Contact>();
 
 	/**
@@ -107,20 +107,19 @@ public class ContactList {
 	 * 
 	 * @author Arman
 	 */
-	public void save(ContactList list) {
+	public void save() {
 		FileOutputStream outFile;
 	      ObjectOutputStream outObject;
 	      try  {
 	         outFile = new FileOutputStream ("data");      
 	         outObject = new ObjectOutputStream(outFile);
-	         outObject.writeObject(list);
-	         outObject.writeObject(list);
+	         outObject.writeObject(currentContacts);
+	         outObject.writeObject(currentContacts);
 	         outFile.close();
 	         outObject.close();      
 	      } catch (IOException ioe)  {
 	         System.out.println ("Error writing objects to the file: "+ ioe.getMessage());
 	      }
-	      list = null;
 	}
 
 	/**
@@ -129,21 +128,21 @@ public class ContactList {
 	 * 
 	 * @author Arman
 	 */
-	public void loadSavedData(ContactList list){
+	public void loadSavedData(){
 	    FileInputStream inFile;
 	      ObjectInputStream inObject;
 
 	      try  {
 	         inFile = new FileInputStream("data");      
 	         inObject = new ObjectInputStream(inFile);
-	         list = (ContactList)inObject.readObject();
-	         list = (ContactList)inObject.readObject();
+	         currentContacts = (ArrayList<Contact>)inObject.readObject();
+	         currentContacts = (ArrayList<Contact>)inObject.readObject();
 	         inFile.close();
 	         inObject.close();      
 	      } catch(IOException ioe)  {
 	         System.out.println ("Error reading from the file: " + ioe.getMessage());
 	      } catch (ClassNotFoundException cnfe)  {
-	         System.out.println ("Error in casting to Rectangle: " + cnfe);
+	         System.out.println (cnfe);
 	      }                      
 	}
 	

@@ -31,7 +31,7 @@ public class TestContactList {
 		//myList.addContact(sammie);
 		//System.out.println(sammie.toString);
 		myList.printAll();
-		myList.printContact("Angler");
+		//myList.printContact();
 		myList.save();
 		System.out.println("This is the last line of code in the program");
 		
