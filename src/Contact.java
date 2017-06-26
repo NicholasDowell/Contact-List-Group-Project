@@ -6,7 +6,7 @@ import java.io.Serializable;
  * @author Nick
  *
  */
-public class Contact implements Comparable <Contact>, Serializable {
+public class Contact implements Comparable<Contact>, Serializable {
 
 	private String firstName;
 	private String lastName;
@@ -23,33 +23,36 @@ public class Contact implements Comparable <Contact>, Serializable {
 	public Contact(String lastName) {
 		this.lastName = lastName;
 	}
+
 	/**
 	 * Return last name of the contact
+	 * 
 	 * @author Zhixiang
 	 */
-	public String getLastName(){
+	public String getLastName() {
 		return lastName;
 	}
+
 	/**
 	 * Sets the last name of the contact
+	 * 
 	 * @author Nick
 	 */
-	public void setLastName(String newLastName){
+	public void setLastName(String newLastName) {
 		this.lastName = newLastName;
 	}
+
 	/**
 	 * Prints out all data on the contact, formatted for user viewing.
+	 * 
 	 * @author Zhixiang
 	 */
-	public String printInfo(){
-		return "Name:    "+ getFirstName() + " " + getLastName() + "\n" +
-		"Phone:   " + getPhoneNumber() + "\n" +
-		"Address: " + getStreetAddress() + "\n" +
-		"Email:   " + getEmailAddress() + "\n" +
-		"Notes:   " + getNotes() + "\n";
+	public String printInfo() {
+		return "Name:    " + getFirstName() + " " + getLastName() + "\n" + "Phone:   " + getPhoneNumber() + "\n"
+				+ "Address: " + getStreetAddress() + "\n" + "Email:   " + getEmailAddress() + "\n" + "Notes:   "
+				+ getNotes() + "\n";
 
 	}
-	
 
 	/**
 	 * Returns the contact's first name
@@ -140,35 +143,36 @@ public class Contact implements Comparable <Contact>, Serializable {
 	public void setNotes(String newNotes) {
 		this.notes = newNotes;
 	}
-	
+
 	/**
-	 * Return formatted entire contact information
+	 * Return entire formatted contact information
+	 * 
 	 * @author Arman
 	 */
-	public String toString(){
-		return firstName + " " +  lastName + " " + streetAddress + " " + emailAddress + " " + phoneNumber + " " + notes ;
+	public String toString() {
+		return firstName + " " + lastName + " " + streetAddress + " " + emailAddress + " " + phoneNumber + " " + notes;
 	}
-	
+
 	/**
-	 * Allow making comparison between contacts for sorting
-	 * Compares this contact to the contact you specify.  Compares by last name then first name alphabetically.
-	 * Returns -1 if this contact comes before the other, returns 0 if they are exactly the same name, returns 1 if this comes after the other one.
+	 * Allow making comparison between contacts for sorting Compares this
+	 * contact to the contact you specify. Compares by last name then first name
+	 * alphabetically. Returns -1 if this contact comes before the other,
+	 * returns 0 if they are exactly the same name, returns 1 if this comes
+	 * after the other one.
+	 * 
 	 * @author Nick
 	 */
-	public int compareTo(Contact otherContact){
+	public int compareTo(Contact otherContact) {
 		if (this.lastName.toLowerCase().compareTo(otherContact.lastName.toLowerCase()) <= -1) {
 			return -1;
-		}
-		else if (this.lastName.toLowerCase().compareTo(otherContact.lastName.toLowerCase()) >= 1){
+		} else if (this.lastName.toLowerCase().compareTo(otherContact.lastName.toLowerCase()) >= 1) {
 			return 1;
-		}
-		else if (this.firstName.toLowerCase().compareTo(otherContact.firstName.toLowerCase()) <= -1){
+		} else if (this.firstName.toLowerCase().compareTo(otherContact.firstName.toLowerCase()) <= -1) {
 			return -1;
-		}
-		else if (this.firstName.toLowerCase().compareTo(otherContact.firstName.toLowerCase()) >= 1){
+		} else if (this.firstName.toLowerCase().compareTo(otherContact.firstName.toLowerCase()) >= 1) {
 			return 1;
-		}
-		else return 0;
+		} else
+			return 0;
 	}
-	
+
 }

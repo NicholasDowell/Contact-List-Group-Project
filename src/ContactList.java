@@ -94,12 +94,12 @@ public class ContactList {
 		boolean found = false;
 		for (int i = 0; i < currentContacts.size(); i++) {
 			if (currentContacts.get(i).getLastName().trim().equalsIgnoreCase(lastName)) {
-				currentContacts.get(i).printInfo();
+				System.out.println(currentContacts.get(i).printInfo());
 				found = true;
 			}
 		}
 		if (!found) {
-			System.out.println("Sorry. Contact with last name: " + lastName + " not found.");
+			System.out.println("Contact with the last name: " + lastName + " not found.");
 		}
 	}
 
@@ -115,7 +115,6 @@ public class ContactList {
 			outFile = new FileOutputStream("data");
 			outObject = new ObjectOutputStream(outFile);
 			outObject.writeObject(currentContacts);
-			outObject.writeObject(currentContacts);
 			outFile.close();
 			outObject.close();
 		} catch (IOException ioe) {
@@ -130,22 +129,30 @@ public class ContactList {
 	 * @author Arman
 	 */
 	public void read() {
-		FileInputStream inFile;
-		ObjectInputStream inObject;
-		try {
-			inFile = new FileInputStream("data");
-			inObject = new ObjectInputStream(inFile);
-			currentContacts = (ArrayList<Contact>) inObject.readObject();
-			currentContacts = (ArrayList<Contact>) inObject.readObject();
-			inFile.close();
-			inObject.close();
-		} catch (IOException ioe) {
-			System.out.println("Error reading from the file: " + ioe.getMessage());
-		} catch (ClassNotFoundException cnfe) {
-			System.out.println(cnfe);
+		if (currentContacts != null) {
+			FileInputStream inFile;
+			ObjectInputStream inObject;
+			try {
+				inFile = new FileInputStream("data");
+				inObject = new ObjectInputStream(inFile);
+				currentContacts = (ArrayList<Contact>) inObject.readObject();
+				inFile.close();
+				inObject.close();
+			} catch (IOException ioe) {
+				System.out.println("Error reading from the file: " + ioe.getMessage());
+			} catch (ClassNotFoundException cnfe) {
+				System.out.println(cnfe);
+			}
+		} else {
+			System.out.println("You have a total of 0 contacts");
 		}
 	}
 
+	/**
+	 * Returns contact information of a contact
+	 * 
+	 * @author Arman
+	 */
 	public String toString() {
 		String results = "";
 		for (Contact c : currentContacts) {
@@ -153,10 +160,13 @@ public class ContactList {
 		}
 		return results;
 	}
-	
-	public void setNull() {
-		for (int i = 0; i < currentContacts.size(); i++) {
-			currentContacts.remove(i);
-		}
+
+	/**
+	 * Removes all objects from the array list currentContacts
+	 * 
+	 * @author Arman
+	 */
+	public void clear() {
+		currentContacts.clear();
 	}
 }

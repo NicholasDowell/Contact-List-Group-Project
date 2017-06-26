@@ -11,7 +11,6 @@ public class MainMethod {
 	public static void main(String[] args) {
 		ContactList myList = new ContactList();
 		myList.read();
-		System.out.println("You have a total of " + myList.getSize() + " contacts");
 		boolean notFinished = true;
 		
 		while (notFinished){
