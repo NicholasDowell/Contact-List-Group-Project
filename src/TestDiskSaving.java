@@ -11,14 +11,17 @@ public class TestDiskSaving {
 		myList.addContact();
 		myList.addContact();
 		myList.printAll();
-		myList.find();
 
 		myList.write();
 
 		myList.clear();
+		System.out.println("CLeared the list");
+		System.out.println("Print the list:");
 		System.out.println(myList);
 
 		myList.read();
+		System.out.println("Load list from disk");
+		System.out.println("Print the list:");
 		System.out.println(myList);
 
 	}

@@ -75,6 +75,7 @@ public class ContactList {
 	 */
 	public void printAll() {
 		ArrayList<Contact> printList = currentContacts;
+		write();
 		Collections.sort(printList);
 		for (int i = 0; i < printList.size(); i++) {
 			System.out.println(printList.get(i).printInfo());

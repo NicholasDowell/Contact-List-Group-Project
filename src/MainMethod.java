@@ -40,7 +40,7 @@ public class MainMethod {
 	 * Prints out the menu so the user can see the available options
 	 */
 	public static void printMenu(){
-		System.out.println("**************************************************************" + "\n");
+		System.out.println("**************************************************************");
 		System.out.println("MENU" + "\n");
 		System.out.println("1 - Enter a new person to the contact list (Last name required)" + "\n");
 		System.out.println("2 - Print the contact list" + "\n");
