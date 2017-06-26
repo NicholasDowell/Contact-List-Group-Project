@@ -18,7 +18,10 @@ public class ContactList {
 	 * @author Nick
 	 */
 	public void addContact() {
-		currentContacts.add(newContact());
+		Contact theContact = newContact();
+		if (theContact != null){
+			currentContacts.add(theContact);
+		}
 	}
 
 	/**
@@ -75,7 +78,7 @@ public class ContactList {
 	 */
 	public void printAll() {
 		ArrayList<Contact> printList = currentContacts;
-		write();
+		
 		Collections.sort(printList);
 		for (int i = 0; i < printList.size(); i++) {
 			System.out.println(printList.get(i).printInfo());
@@ -140,12 +143,12 @@ public class ContactList {
 				inFile.close();
 				inObject.close();
 			} catch (IOException ioe) {
-				System.out.println("Error reading from the file: " + ioe.getMessage());
+				System.out.println("No contacts found on disk");
 			} catch (ClassNotFoundException cnfe) {
 				System.out.println(cnfe);
 			}
 		} else {
-			System.out.println("You have a total of 0 contacts");
+			System.out.println("You have a total of " + currentContacts.size() + " contacts");
 		}
 	}
 

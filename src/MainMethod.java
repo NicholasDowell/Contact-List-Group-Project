@@ -14,6 +14,8 @@ public class MainMethod {
 		boolean notFinished = true;
 		
 		while (notFinished){
+			System.out.println();
+			System.out.print("You have a total of " + myList.getSize() + " contacts");
 			printMenu();
 			switch(getUserChoice()){
 			case 1: System.out.println("You chose option 1 to add a new contact:");
@@ -40,6 +42,7 @@ public class MainMethod {
 	 * Prints out the menu so the user can see the available options
 	 */
 	public static void printMenu(){
+		System.out.println();
 		System.out.println("**************************************************************");
 		System.out.println("MENU" + "\n");
 		System.out.println("1 - Enter a new person to the contact list (Last name required)" + "\n");
@@ -60,3 +63,4 @@ public class MainMethod {
 	
 	
 }
+
