@@ -25,7 +25,7 @@ public class MainMethod {
 			case 3: System.out.println("You chose option 3 to search by last name:");
 					myList.find();
 					break;
-			case 4: System.out.println("You chose option 4 to quit:");
+			case 4: System.out.println("You chose option 4 to quit.");
 					myList.write();
 					notFinished = false;
 					break;
@@ -46,7 +46,7 @@ public class MainMethod {
 		System.out.println("2 - Print the contact list" + "\n");
 		System.out.println("3 - Retrieve a person's information by last name" + "\n");
 		System.out.println("4 - Quit the program" + "\n");
-		System.out.println("*Please choose a number, then press �Enter�" + "\n" +
+		System.out.println("*Please choose a number, then press Enter" + "\n" +
 							"***************************************************************");
 	}
 	/**
